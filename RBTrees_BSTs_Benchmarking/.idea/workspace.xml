@@ -6,9 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="729e6e7a-2de0-4a18-b15b-197c1483da40" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/trees/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/Validator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/trees/benchmark/InputGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/benchmark/InputGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/trees/benchmark/Stats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/benchmark/Stats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/trees/benchmark/BenchmarkRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/benchmark/BenchmarkRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/trees/BST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/BST.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/trees/RBTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/RBTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/trees/Validator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/Validator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/trees/benchmark/BenchmarkRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/benchmark/BenchmarkRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/trees/benchmark/InputGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/benchmark/InputGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/trees/benchmark/Stats.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/benchmark/Stats.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +44,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.BenchmarkRunner.executor": "Run",
     "Application.Main.executor": "Run",
     "JUnit.BSTTest.executor": "Run",
     "JUnit.RBTreeTest.executor": "Run",
@@ -64,7 +69,20 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.BenchmarkRunner">
+    <configuration name="BenchmarkRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="trees.benchmark.BenchmarkRunner" />
+      <module name="RBTrees_BSTs_Benchmarking" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="trees.benchmark.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="trees in RBTrees_BSTs_Benchmarking" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RBTrees_BSTs_Benchmarking" />
       <extension name="coverage">
@@ -83,6 +101,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BenchmarkRunner" />
         <item itemvalue="JUnit.trees in RBTrees_BSTs_Benchmarking" />
       </list>
     </recent_temporary>
@@ -96,7 +115,8 @@
       <updated>1775409190856</updated>
       <workItem from="1775409194933" duration="3439000" />
       <workItem from="1775428008930" duration="270000" />
-      <workItem from="1775428340091" duration="27224000" />
+      <workItem from="1775428340091" duration="29330000" />
+      <workItem from="1775484112428" duration="5631000" />
     </task>
     <servers />
   </component>
