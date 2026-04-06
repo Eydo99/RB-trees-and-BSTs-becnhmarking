@@ -76,7 +76,7 @@ public class BenchmarkRunner {
      * @param input        the array of integers to insert
      * @return array of {@value #RUNS} nanosecond timing measurements
      */
-    private static long[] benchmarkInsert(Supplier<TreeInterface> treeSupplier, int[] input) {
+    private static long[] benchmarkInsert(Supplier<TreeInterface> treeSupplier, int[] input,String distribution,String structure) throws IOException {
         long[] elapsedArray = new long[RUNS-1];
 
         for (int i = 0; i < RUNS; i++) {
@@ -90,7 +90,15 @@ public class BenchmarkRunner {
             if(i==0) continue;
             elapsedArray[i-1] = elapsed;
             if (i == RUNS - 1)
-                System.out.println("Height after insertion: " + tree.height());
+            {
+                int height = tree.height();
+                System.out.println("Height after insertion: " + height);
+                // write to CSV
+                FileWriter fw = new FileWriter("results.csv", true);
+                PrintWriter pw = new PrintWriter(fw);
+                pw.printf("%s,%s,Height,%d,%d,0%n", distribution, structure, height, height);
+                pw.close();
+            }
 
         }
         return elapsedArray;
@@ -249,7 +257,7 @@ public class BenchmarkRunner {
         System.out.println("\n=== " + distribution + " ===");
 
         System.out.println("\n-- BST --");
-        long[] bstInsert = benchmarkInsert(BST::new, input);
+        long[] bstInsert = benchmarkInsert(BST::new, input,distribution,"BST");
         long[] bstContains = benchmarkContains(BST::new, input);
         long[] bstDelete = benchmarkDelete(BST::new, input);
         long[] bstSort = benchmarkSort(BST::new, input);
@@ -265,7 +273,7 @@ public class BenchmarkRunner {
         writeToCSV(distribution, "BST", "Sort", bstSort);
 
         System.out.println("\n-- RBTree --");
-        long[] RBInsert = benchmarkInsert(RBTree::new, input);
+        long[] RBInsert = benchmarkInsert(RBTree::new, input,distribution,"RBTree");
         long[] RBContains = benchmarkContains(RBTree::new, input);
         long[] RBDelete = benchmarkDelete(RBTree::new, input);
         long[] RBSort = benchmarkSort(RBTree::new, input);
