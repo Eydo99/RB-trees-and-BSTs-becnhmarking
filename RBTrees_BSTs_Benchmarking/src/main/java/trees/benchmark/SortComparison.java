@@ -10,48 +10,18 @@ import java.util.List;
  * This class records comparison and interchange counts alongside each sort
  * step,
  * making it suitable for both benchmarking and step-by-step analysis. The
- * {@link #steps}
  * list captures array snapshots at each active index, enabling visualisation of
  * the
  * sorting process.
  * </p>
  * <p>
  * To run a timed sort, call {@link #sort(int[])} which first calls
- * {@link #reset()} to
  * clear any state from a previous run, then performs the sort.
  * </p>
  */
 public class SortComparison {
 
-    /**
-     * Immutable snapshot of the array state at a particular merge step.
-     * Used for visualisation and step-by-step analysis.
-     */
-    static class SortStep {
-        /** A clone of the array at this point in the sort. */
-        public int[] array;
 
-        /** The index in the array that was most recently written. */
-        public int activeIndex;
-
-        /**
-         * @param array       the current state of the array (cloned to avoid aliasing)
-         * @param activeIndex the index most recently modified
-         */
-        public SortStep(int[] array, int activeIndex) {
-            this.array = array.clone();
-            this.activeIndex = activeIndex;
-        }
-    }
-
-    /** Running count of element comparisons performed. */
-    private long comparisons = 0;
-
-    /** Running count of element placements (writes into the output array). */
-    private long interchanges = 0;
-
-    /** Log of all intermediate array states captured during sorting. */
-    private List<SortStep> steps = new ArrayList<>();
 
     /** Human-readable label for this sorter (used in reporting). */
     String name;
@@ -63,15 +33,6 @@ public class SortComparison {
         this.name = "MergeSort";
     }
 
-    /**
-     * Resets statistics and step log for a fresh run.
-     * Called automatically at the start of {@link #sort(int[])}.
-     */
-    public void reset() {
-        steps.clear();
-        comparisons = 0;
-        interchanges = 0;
-    }
 
     /**
      * Sorts the given array in ascending order using MergeSort.
@@ -80,7 +41,6 @@ public class SortComparison {
      * @param array the array to sort in place
      */
     public void sort(int[] array) {
-        reset();
         mergeSort(array);
     }
 
@@ -134,15 +94,11 @@ public class SortComparison {
                 array[i] = left[l]; // left element is smaller — place it
                 l++;
                 i++;
-                interchanges++;
             } else {
                 array[i] = right[r]; // right element is smaller or equal — place it
                 r++;
                 i++;
-                interchanges++;
             }
-
-            comparisons++; // one comparison consumed
         }
 
         // Drain remaining elements from left half (already in order)
@@ -150,7 +106,6 @@ public class SortComparison {
             array[i] = left[l];
             l++;
             i++;
-            interchanges++;
 
         }
 
@@ -159,7 +114,6 @@ public class SortComparison {
             array[i] = right[r];
             r++;
             i++;
-            interchanges++;
         }
     }
 }

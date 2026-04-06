@@ -5,33 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="729e6e7a-2de0-4a18-b15b-197c1483da40" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/trees/BST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/BST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/trees/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/trees/Node/BSTNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/Node/BSTNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/trees/Node/RBNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/Node/RBNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/trees/RBTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/RBTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/trees/TreeInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/TreeInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/trees/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/Validator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/trees/benchmark/BenchmarkRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/benchmark/BenchmarkRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/trees/benchmark/InputGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/benchmark/InputGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/trees/benchmark/SortComparison.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/benchmark/SortComparison.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/trees/benchmark/Stats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/benchmark/Stats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/trees/BSTTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/trees/BSTTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/trees/RBTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/trees/RBTreeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/trees/BST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/BST.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/trees/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/trees/Node/BSTNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/Node/BSTNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/trees/Node/RBNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/Node/RBNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/trees/RBTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/RBTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/trees/Validator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/Validator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/trees/benchmark/BenchmarkRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/benchmark/BenchmarkRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/trees/benchmark/InputGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/benchmark/InputGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/trees/benchmark/SortComparison$SortStep.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/benchmark/SortComparison$SortStep.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/trees/benchmark/SortComparison.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/benchmark/SortComparison.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/trees/benchmark/Stats.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/benchmark/Stats.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/trees/BSTTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/trees/BSTTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/trees/RBTreeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/trees/RBTreeTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,34 +36,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.BenchmarkRunner.executor": "Run",
-    "Application.Main.executor": "Run",
-    "JUnit.BSTTest.executor": "Run",
-    "JUnit.RBTreeTest.executor": "Run",
-    "JUnit.trees in RBTrees_BSTs_Benchmarking.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "documented",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.BenchmarkRunner.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BSTTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RBTreeTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.trees in RBTrees_BSTs_Benchmarking.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;documented&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.BenchmarkRunner">
     <configuration name="BenchmarkRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="trees.benchmark.BenchmarkRunner" />

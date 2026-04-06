@@ -34,7 +34,7 @@ import java.util.function.Supplier;
 public class BenchmarkRunner {
 
     /** Number of times each benchmark is repeated for statistical reliability. */
-    private static final int RUNS = 5;
+    private static final int RUNS = 6;
 
     /**
      * Entry point. Generates the four input distributions, writes the CSV header,
@@ -77,7 +77,7 @@ public class BenchmarkRunner {
      * @return array of {@value #RUNS} nanosecond timing measurements
      */
     private static long[] benchmarkInsert(Supplier<TreeInterface> treeSupplier, int[] input) {
-        long[] elapsedArray = new long[RUNS];
+        long[] elapsedArray = new long[RUNS-1];
 
         for (int i = 0; i < RUNS; i++) {
             TreeInterface tree = treeSupplier.get();
@@ -87,7 +87,8 @@ public class BenchmarkRunner {
             }
             long end = System.nanoTime();
             long elapsed = end - start;
-            elapsedArray[i] = elapsed;
+            if(i==0) continue;
+            elapsedArray[i-1] = elapsed;
             if (i == RUNS - 1)
                 System.out.println("Height after insertion: " + tree.height());
 
@@ -109,7 +110,7 @@ public class BenchmarkRunner {
     private static long[] benchmarkContains(Supplier<TreeInterface> treeSupplier, int[] input) {
         int n = input.length;
         TreeInterface tree = treeSupplier.get();
-        long[] elapsedArray = new long[RUNS];
+        long[] elapsedArray = new long[RUNS-1];
 
         // Pre-fill the tree once — it is reused across all RUNS
         for (int k : input) {
@@ -131,7 +132,8 @@ public class BenchmarkRunner {
             }
             long end = System.nanoTime();
             long elapsed = end - start;
-            elapsedArray[i] = elapsed;
+            if(i==0) continue;
+            elapsedArray[i-1] = elapsed;
         }
         return elapsedArray;
     }
@@ -147,7 +149,7 @@ public class BenchmarkRunner {
      */
     private static long[] benchmarkDelete(Supplier<TreeInterface> treeSupplier, int[] input) {
         int n = input.length;
-        long[] elapsedArray = new long[RUNS];
+        long[] elapsedArray = new long[RUNS-1];
         int deletionNo = (int) (0.2 * n); // delete 20% of elements
         for (int i = 0; i < RUNS; i++) {
             // Fresh tree each run so deletions don't accumulate
@@ -163,7 +165,8 @@ public class BenchmarkRunner {
             }
             long end = System.nanoTime();
             long elapsed = end - start;
-            elapsedArray[i] = elapsed;
+            if(i==0) continue;
+            elapsedArray[i-1] = elapsed;
         }
         return elapsedArray;
     }
@@ -188,7 +191,8 @@ public class BenchmarkRunner {
             tree.inOrder(); // in-order traversal = sorted output
             long end = System.nanoTime();
             long elapsed = end - start;
-            elapsedArray[i] = elapsed;
+            if(i==0) continue;
+            elapsedArray[i-1] = elapsed;
 
         }
         return elapsedArray;
@@ -212,7 +216,8 @@ public class BenchmarkRunner {
             mergeSort.sort(copy);
             long end = System.nanoTime();
             long elapsed = end - start;
-            elapsedArray[i] = elapsed;
+            if(i==0) continue;
+            elapsedArray[i-1] = elapsed;
         }
         return elapsedArray;
     }
