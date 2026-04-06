@@ -12,7 +12,7 @@ import java.util.Random;
 import java.util.function.Supplier;
 
 public class BenchmarkRunner {
-    private static final int RUNS=5;
+    private static final int RUNS=6;
 
     public static void main(String[] args) throws IOException {
         InputGenerator generator=new InputGenerator();
@@ -36,7 +36,7 @@ public class BenchmarkRunner {
 
     private static long[] benchmarkInsert(Supplier<TreeInterface> treeSupplier,int[] input)
     {
-        long[] elapsedArray=new long[RUNS];
+        long[] elapsedArray=new long[RUNS-1];
 
         for(int i=0;i<RUNS;i++)
         {
@@ -47,7 +47,8 @@ public class BenchmarkRunner {
             }
             long end = System.nanoTime();
             long elapsed = end - start;
-            elapsedArray[i] = elapsed;
+            if(i==0) continue;
+            elapsedArray[i-1] = elapsed;
             if (i == RUNS - 1) System.out.println("Height after insertion: " + tree.height());
 
         }
@@ -58,7 +59,7 @@ public class BenchmarkRunner {
     {
         int n=input.length;
         TreeInterface tree=treeSupplier.get();
-        long[] elapsedArray=new long[RUNS];
+        long[] elapsedArray=new long[RUNS-1];
 
         for (int k : input) {
             tree.insert(k);
@@ -80,7 +81,8 @@ public class BenchmarkRunner {
             }
             long end=System.nanoTime();
             long elapsed=end-start;
-            elapsedArray[i]=elapsed;
+            if(i==0) continue;
+            elapsedArray[i-1]=elapsed;
         }
         return elapsedArray;
     }
@@ -88,7 +90,7 @@ public class BenchmarkRunner {
     private static long[] benchmarkDelete(Supplier<TreeInterface> treeSupplier,int[] input)
     {
         int n=input.length;
-        long[] elapsedArray=new long[RUNS];
+        long[] elapsedArray=new long[RUNS-1];
         int deletionNo=(int) (0.2*n);
         for(int i=0;i<RUNS;i++)
         {
@@ -104,14 +106,15 @@ public class BenchmarkRunner {
             }
             long end=System.nanoTime();
             long elapsed=end-start;
-            elapsedArray[i]=elapsed;
+            if(i==0) continue;
+            elapsedArray[i-1]=elapsed;
         }
         return elapsedArray;
     }
 
     private static long[] benchmarkSort(Supplier <TreeInterface> treeSupplier, int[] input)
     {
-        long[] elapsedArray=new long[RUNS];
+        long[] elapsedArray=new long[RUNS-1];
         for(int i=0;i<RUNS;i++)
         {
             TreeInterface tree=treeSupplier.get();
@@ -120,7 +123,8 @@ public class BenchmarkRunner {
             tree.inOrder();
             long end=System.nanoTime();
             long elapsed=end-start;
-            elapsedArray[i]=elapsed;
+            if(i==0) continue;
+            elapsedArray[i-1]=elapsed;
 
         }
         return elapsedArray;
@@ -129,7 +133,7 @@ public class BenchmarkRunner {
     private static long[] benchmarkMergeSort(int[] input)
     {
         SortComparison mergeSort=new SortComparison();
-        long[] elapsedArray=new long[RUNS];
+        long[] elapsedArray=new long[RUNS-1];
         for(int i=0;i<RUNS;i++)
         {
             int[] copy= Arrays.copyOf(input,input.length);
@@ -137,7 +141,8 @@ public class BenchmarkRunner {
             mergeSort.sort(copy);
             long end=System.nanoTime();
             long elapsed=end-start;
-            elapsedArray[i]=elapsed;
+            if(i==0) continue;
+            elapsedArray[i-1]=elapsed;
         }
         return elapsedArray;
     }

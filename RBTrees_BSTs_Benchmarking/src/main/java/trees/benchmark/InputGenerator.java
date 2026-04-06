@@ -2,8 +2,6 @@ package trees.benchmark;
 
 import java.util.Random;
 
-import static java.util.Collections.swap;
-
 public class InputGenerator {
 
     private static final int n=100000;
