@@ -1,0 +1,37 @@
+Distribution,Structure,Operation,Mean,Median,StdDev
+RANDOM,BST,Insert,64.05,64.84,16.48
+RANDOM,BST,Contains,13.72,10.12,6.94
+RANDOM,BST,Delete,15.87,17.47,4.32
+RANDOM,BST,Sort,52.00,54.47,5.95
+RANDOM,RBTree,Insert,51.93,45.83,14.00
+RANDOM,RBTree,Contains,20.94,17.66,7.29
+RANDOM,RBTree,Delete,8.63,8.60,2.53
+RANDOM,RBTree,Sort,40.32,40.42,4.46
+RANDOM,MergeSort,Sort,10.71,9.77,1.94
+Nearly-Sorted with 1% misplaced elements,BST,Insert,537.92,564.80,58.50
+Nearly-Sorted with 1% misplaced elements,BST,Contains,171.35,159.08,26.06
+Nearly-Sorted with 1% misplaced elements,BST,Delete,125.15,124.70,2.89
+Nearly-Sorted with 1% misplaced elements,BST,Sort,488.84,494.39,14.26
+Nearly-Sorted with 1% misplaced elements,RBTree,Insert,22.68,22.85,1.10
+Nearly-Sorted with 1% misplaced elements,RBTree,Contains,17.19,16.40,3.41
+Nearly-Sorted with 1% misplaced elements,RBTree,Delete,7.72,8.06,0.91
+Nearly-Sorted with 1% misplaced elements,RBTree,Sort,28.01,26.32,3.47
+Nearly-Sorted with 1% misplaced elements,MergeSort,Sort,8.62,8.60,0.03
+Nearly-Sorted with 5% misplaced elements,BST,Insert,112.01,108.04,7.32
+Nearly-Sorted with 5% misplaced elements,BST,Contains,33.12,29.01,8.97
+Nearly-Sorted with 5% misplaced elements,BST,Delete,40.20,41.33,9.04
+Nearly-Sorted with 5% misplaced elements,BST,Sort,127.05,121.84,15.88
+Nearly-Sorted with 5% misplaced elements,RBTree,Insert,25.92,25.98,0.37
+Nearly-Sorted with 5% misplaced elements,RBTree,Contains,16.36,16.73,1.70
+Nearly-Sorted with 5% misplaced elements,RBTree,Delete,6.79,8.03,2.11
+Nearly-Sorted with 5% misplaced elements,RBTree,Sort,35.72,30.00,8.29
+Nearly-Sorted with 5% misplaced elements,MergeSort,Sort,4.18,3.87,0.64
+Nearly-Sorted with 10% misplaced elements,BST,Insert,82.16,78.58,11.38
+Nearly-Sorted with 10% misplaced elements,BST,Contains,25.05,21.02,7.73
+Nearly-Sorted with 10% misplaced elements,BST,Delete,32.90,39.88,9.56
+Nearly-Sorted with 10% misplaced elements,BST,Sort,80.56,84.09,5.80
+Nearly-Sorted with 10% misplaced elements,RBTree,Insert,28.18,27.83,1.29
+Nearly-Sorted with 10% misplaced elements,RBTree,Contains,19.91,21.42,5.40
+Nearly-Sorted with 10% misplaced elements,RBTree,Delete,7.46,8.34,1.59
+Nearly-Sorted with 10% misplaced elements,RBTree,Sort,31.55,32.23,0.98
+Nearly-Sorted with 10% misplaced elements,MergeSort,Sort,4.50,4.48,0.09

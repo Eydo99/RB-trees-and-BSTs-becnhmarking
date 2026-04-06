@@ -4,6 +4,9 @@ import trees.BST;
 import trees.RBTree;
 import trees.TreeInterface;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.function.Supplier;
@@ -11,14 +14,18 @@ import java.util.function.Supplier;
 public class BenchmarkRunner {
     private static final int RUNS=5;
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) throws IOException {
         InputGenerator generator=new InputGenerator();
 
         int[] random=generator.generateRandom();
         int[] nearlySorted1=generator.generateNearlySorted(1);
         int[] nearlySorted5=generator.generateNearlySorted(5);
         int[] nearlySorted10=generator.generateNearlySorted(10);
+
+        FileWriter fw = new FileWriter("results.csv", false); // false = overwrite
+        PrintWriter pw = new PrintWriter(fw);
+        pw.println("Distribution,Structure,Operation,Mean,Median,StdDev");
+        pw.close();
 
         runAllBenchmarks("RANDOM",random);
         runAllBenchmarks("Nearly-Sorted with 1% misplaced elements",nearlySorted1);
@@ -142,8 +149,7 @@ public class BenchmarkRunner {
                 Stats.standardDeviation(times) / 1_000_000);
     }
 
-    private static void runAllBenchmarks(String distribution ,int[] input)
-    {
+    private static void runAllBenchmarks(String distribution ,int[] input) throws IOException {
         System.out.println("\n=== " + distribution + " ===");
 
         System.out.println("\n-- BST --");
@@ -154,9 +160,13 @@ public class BenchmarkRunner {
 
         // print BST results
         printResults("Insert", bstInsert);
+        writeToCSV(distribution, "BST", "Insert", bstInsert);
         printResults("Contains", bstContains);
+        writeToCSV(distribution, "BST", "Contains", bstContains);
         printResults("Delete", bstDelete);
+        writeToCSV(distribution, "BST", "Delete", bstDelete);
         printResults("Sort", bstSort);
+        writeToCSV(distribution, "BST", "Sort", bstSort);
 
         System.out.println("\n-- RBTree --");
         long[] RBInsert=benchmarkInsert(RBTree::new,input);
@@ -166,20 +176,35 @@ public class BenchmarkRunner {
 
         // print RB results
         printResults("Insert", RBInsert);
+        writeToCSV(distribution, "RBTree", "Insert", RBInsert);
         printResults("Contains", RBContains);
+        writeToCSV(distribution, "RBTree", "Contains", RBContains);
         printResults("Delete", RBDelete);
+        writeToCSV(distribution, "RBTree", "Delete", RBDelete);
         printResults("Sort", RBSort);
+        writeToCSV(distribution, "RBTree", "Sort", RBSort);
 
         System.out.println("\n-- MergeSort --");
         long[] mergeSort = benchmarkMergeSort(input);
         printResults("Sort", mergeSort);
+        writeToCSV(distribution, "MergeSort", "Sort", mergeSort);
 
 
         System.out.printf("%nSpeedup (BST/RBTree):%n");
-        System.out.printf("Insert speedup: %.2fx%n", Stats.mean(RBInsert) / Stats.mean(bstInsert));
-        System.out.printf("Contains speedup: %.2fx%n", Stats.mean(RBContains) / Stats.mean(bstContains));
-        System.out.printf("Delete speedup: %.2fx%n", Stats.mean(RBDelete) / Stats.mean(bstDelete));
-        System.out.printf("Sort speedup: %.2fx%n", Stats.mean(RBSort) / Stats.mean(bstSort));
+        System.out.printf("Insert speedup: %.2fx%n", Stats.mean(bstInsert) / Stats.mean(RBInsert));
+        System.out.printf("Contains speedup: %.2fx%n", Stats.mean(bstContains) / Stats.mean(RBContains));
+        System.out.printf("Delete speedup: %.2fx%n", Stats.mean(bstDelete) / Stats.mean(RBDelete));
+        System.out.printf("Sort speedup: %.2fx%n", Stats.mean(bstSort) / Stats.mean(RBSort));
     }
 
+    private static void writeToCSV(String distribution, String structure, String operation, long[] times) throws IOException {
+        FileWriter fw = new FileWriter("results.csv", true); // true = append mode
+        PrintWriter pw = new PrintWriter(fw);
+        pw.printf("%s,%s,%s,%.2f,%.2f,%.2f%n",
+                distribution, structure, operation,
+                Stats.mean(times)/1_000_000,
+                Stats.median(times)/1_000_000,
+                Stats.standardDeviation(times)/1_000_000);
+        pw.close();
+    }
 }
