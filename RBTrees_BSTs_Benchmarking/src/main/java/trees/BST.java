@@ -9,17 +9,11 @@ import java.util.ArrayList;
 public class BST implements  TreeInterface {
 
     private BSTNode root;
-
+    private int size;
+    private static final Logger logger = LoggerFactory.getLogger(BST.class);
     public BSTNode getRoot() {
         return root;
     }
-
-    public void setRoot(BSTNode root) {
-        this.root = root;
-    }
-
-    private int size;
-    private static final Logger logger = LoggerFactory.getLogger(BST.class);
 
     public BST() {
         this.root = null;

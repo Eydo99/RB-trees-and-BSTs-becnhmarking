@@ -1,11 +1,11 @@
 package trees.Node;
 
 public class RBNode {
-    RBNode parent;
-    RBNode left;
-    RBNode right;
-    int data;
-    boolean isRed;
+   public RBNode parent;
+   public RBNode left;
+   public RBNode right;
+   public int data;
+   public boolean isRed;
 
     public RBNode(int data)
     {

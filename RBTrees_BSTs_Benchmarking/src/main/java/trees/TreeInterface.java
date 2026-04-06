@@ -7,4 +7,5 @@ public interface TreeInterface {
     int[] inOrder();
     int height();
     int size();
+
 }
