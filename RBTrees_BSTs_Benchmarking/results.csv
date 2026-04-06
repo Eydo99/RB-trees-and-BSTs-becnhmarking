@@ -1,45 +1,45 @@
 Distribution,Structure,Operation,Mean,Median,StdDev
 RANDOM,BST,Height,42,42,0
-RANDOM,BST,Insert,56.25,62.31,13.93
-RANDOM,BST,Contains,11.50,9.74,2.70
-RANDOM,BST,Delete,15.62,16.62,2.28
-RANDOM,BST,Sort,47.26,49.01,5.39
+RANDOM,BST,Insert,50.62,51.61,12.98
+RANDOM,BST,Contains,11.46,9.98,2.75
+RANDOM,BST,Delete,12.95,13.65,1.95
+RANDOM,BST,Sort,45.42,44.46,5.10
 RANDOM,RBTree,Height,20,20,0
-RANDOM,RBTree,Insert,47.85,45.85,3.59
-RANDOM,RBTree,Contains,14.64,14.58,0.68
-RANDOM,RBTree,Delete,7.18,6.75,2.10
-RANDOM,RBTree,Sort,47.41,43.96,5.89
-RANDOM,MergeSort,Sort,9.43,9.32,1.22
+RANDOM,RBTree,Insert,36.36,36.76,3.92
+RANDOM,RBTree,Contains,12.30,9.89,3.24
+RANDOM,RBTree,Delete,6.58,6.88,1.51
+RANDOM,RBTree,Sort,39.62,40.29,2.17
+RANDOM,MergeSort,Sort,9.19,8.52,1.07
 Nearly-Sorted with 1% misplaced elements,BST,Height,3145,3145,0
-Nearly-Sorted with 1% misplaced elements,BST,Insert,471.69,475.67,9.27
-Nearly-Sorted with 1% misplaced elements,BST,Contains,163.34,163.82,4.64
-Nearly-Sorted with 1% misplaced elements,BST,Delete,118.41,117.17,2.71
-Nearly-Sorted with 1% misplaced elements,BST,Sort,462.55,462.70,12.78
+Nearly-Sorted with 1% misplaced elements,BST,Insert,454.53,455.49,5.35
+Nearly-Sorted with 1% misplaced elements,BST,Contains,157.17,156.50,1.21
+Nearly-Sorted with 1% misplaced elements,BST,Delete,119.33,117.26,3.42
+Nearly-Sorted with 1% misplaced elements,BST,Sort,469.98,470.36,13.55
 Nearly-Sorted with 1% misplaced elements,RBTree,Height,30,30,0
-Nearly-Sorted with 1% misplaced elements,RBTree,Insert,23.07,22.83,1.42
-Nearly-Sorted with 1% misplaced elements,RBTree,Contains,18.79,15.56,6.13
-Nearly-Sorted with 1% misplaced elements,RBTree,Delete,7.09,8.25,1.57
-Nearly-Sorted with 1% misplaced elements,RBTree,Sort,27.73,26.48,2.15
-Nearly-Sorted with 1% misplaced elements,MergeSort,Sort,3.66,3.55,0.25
+Nearly-Sorted with 1% misplaced elements,RBTree,Insert,22.70,22.60,0.69
+Nearly-Sorted with 1% misplaced elements,RBTree,Contains,13.69,12.18,3.45
+Nearly-Sorted with 1% misplaced elements,RBTree,Delete,6.41,6.54,1.86
+Nearly-Sorted with 1% misplaced elements,RBTree,Sort,25.99,25.92,0.77
+Nearly-Sorted with 1% misplaced elements,MergeSort,Sort,3.71,3.68,0.10
 Nearly-Sorted with 5% misplaced elements,BST,Height,1577,1577,0
-Nearly-Sorted with 5% misplaced elements,BST,Insert,109.57,108.77,2.65
-Nearly-Sorted with 5% misplaced elements,BST,Contains,29.77,29.88,0.64
-Nearly-Sorted with 5% misplaced elements,BST,Delete,40.67,42.61,9.24
-Nearly-Sorted with 5% misplaced elements,BST,Sort,122.52,119.46,8.48
+Nearly-Sorted with 5% misplaced elements,BST,Insert,108.92,109.93,2.17
+Nearly-Sorted with 5% misplaced elements,BST,Contains,29.17,27.79,2.10
+Nearly-Sorted with 5% misplaced elements,BST,Delete,43.02,47.99,10.15
+Nearly-Sorted with 5% misplaced elements,BST,Sort,118.54,117.05,4.61
 Nearly-Sorted with 5% misplaced elements,RBTree,Height,30,30,0
-Nearly-Sorted with 5% misplaced elements,RBTree,Insert,25.34,25.28,0.41
-Nearly-Sorted with 5% misplaced elements,RBTree,Contains,18.09,19.54,4.56
-Nearly-Sorted with 5% misplaced elements,RBTree,Delete,8.77,9.03,0.84
-Nearly-Sorted with 5% misplaced elements,RBTree,Sort,31.27,31.34,0.33
-Nearly-Sorted with 5% misplaced elements,MergeSort,Sort,4.33,4.34,0.03
+Nearly-Sorted with 5% misplaced elements,RBTree,Insert,26.31,26.31,0.65
+Nearly-Sorted with 5% misplaced elements,RBTree,Contains,13.93,11.80,3.80
+Nearly-Sorted with 5% misplaced elements,RBTree,Delete,7.21,8.27,1.54
+Nearly-Sorted with 5% misplaced elements,RBTree,Sort,29.34,30.16,1.51
+Nearly-Sorted with 5% misplaced elements,MergeSort,Sort,4.34,4.32,0.04
 Nearly-Sorted with 10% misplaced elements,BST,Height,1010,1010,0
-Nearly-Sorted with 10% misplaced elements,BST,Insert,76.40,75.07,6.85
-Nearly-Sorted with 10% misplaced elements,BST,Contains,20.91,20.96,0.54
-Nearly-Sorted with 10% misplaced elements,BST,Delete,27.45,27.11,3.60
-Nearly-Sorted with 10% misplaced elements,BST,Sort,81.66,81.89,2.73
+Nearly-Sorted with 10% misplaced elements,BST,Insert,75.10,75.24,6.05
+Nearly-Sorted with 10% misplaced elements,BST,Contains,21.17,21.00,0.53
+Nearly-Sorted with 10% misplaced elements,BST,Delete,30.10,31.44,7.62
+Nearly-Sorted with 10% misplaced elements,BST,Sort,89.49,84.39,8.48
 Nearly-Sorted with 10% misplaced elements,RBTree,Height,29,29,0
-Nearly-Sorted with 10% misplaced elements,RBTree,Insert,32.02,31.80,0.81
-Nearly-Sorted with 10% misplaced elements,RBTree,Contains,17.45,12.39,6.65
-Nearly-Sorted with 10% misplaced elements,RBTree,Delete,8.24,8.26,0.29
-Nearly-Sorted with 10% misplaced elements,RBTree,Sort,30.87,29.81,1.65
-Nearly-Sorted with 10% misplaced elements,MergeSort,Sort,4.67,4.64,0.08
+Nearly-Sorted with 10% misplaced elements,RBTree,Insert,28.67,28.36,0.84
+Nearly-Sorted with 10% misplaced elements,RBTree,Contains,16.78,18.94,4.22
+Nearly-Sorted with 10% misplaced elements,RBTree,Delete,8.36,8.67,1.37
+Nearly-Sorted with 10% misplaced elements,RBTree,Sort,30.79,30.90,1.56
+Nearly-Sorted with 10% misplaced elements,MergeSort,Sort,4.55,4.53,0.08
