@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="729e6e7a-2de0-4a18-b15b-197c1483da40" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/trees/benchmark/BenchmarkRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/benchmark/BenchmarkRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/trees/benchmark/InputGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/benchmark/InputGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/trees/benchmark/SortComparison.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/benchmark/SortComparison.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/trees/benchmark/BenchmarkRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/benchmark/BenchmarkRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/trees/benchmark/InputGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/benchmark/InputGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/trees/benchmark/SortComparison$SortStep.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/trees/benchmark/SortComparison.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/benchmark/SortComparison.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
