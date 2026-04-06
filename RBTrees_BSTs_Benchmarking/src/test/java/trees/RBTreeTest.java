@@ -5,30 +5,43 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-
+/**
+ * Unit tests for {@link RBTree} (Red-Black Tree).
+ * <p>
+ * Each test creates a fresh {@link RBTree} instance via {@link #setup()}
+ * annotated
+ * with {@code @BeforeEach}. Tests cover all core operations:
+ * insert, delete, contains, size, height, and inOrder traversal — including
+ * edge cases such as empty trees, duplicates, and large bulk operations,
+ * and invariant-sensitive cases such as insert/delete triggering rotations.
+ * </p>
+ */
 public class RBTreeTest {
     RBTree rbt;
     BST bst;
 
     @BeforeEach
-    void setup()
-    {
-        rbt=new RBTree();
+    void setup() {
+        rbt = new RBTree();
     }
 
+    /** Verifies that inserting a single element increments size to 1. */
     @Test
-    void singleInsert()
-    {
+    void singleInsert() {
         rbt.insert(12);
         assertEquals(1, rbt.size());
     }
+
+    /**
+     * Verifies that inserting a duplicate returns {@code false} and does not change
+     * size.
+     */
     @Test
-    void duplicateInsert()
-    {
+    void duplicateInsert() {
         rbt.insert(5);
-        boolean duplicateCheck=rbt.insert(5);
+        boolean duplicateCheck = rbt.insert(5);
         assertFalse(duplicateCheck);
-        assertEquals(1,rbt.size());
+        assertEquals(1, rbt.size());
     }
 
     @Test
@@ -41,112 +54,99 @@ public class RBTreeTest {
         rbt.insert(36);
         assertEquals(6, rbt.size());
     }
+
     @Test
-    void checkAfterInsert()
-    {
+    void checkAfterInsert() {
         rbt.insert(10);
-        boolean insertCheck= rbt.contains(10);
+        boolean insertCheck = rbt.contains(10);
         assertTrue(insertCheck);
     }
 
-
     @Test
-    void checkAfterDeletion()
-    {
+    void checkAfterDeletion() {
         rbt.insert(10);
         rbt.delete(10);
-        boolean containCheck= rbt.contains(10);
+        boolean containCheck = rbt.contains(10);
         assertFalse(containCheck);
     }
 
     @Test
-    void containsEmpty()
-    {
-        boolean checkEmpty=rbt.contains(10);
+    void containsEmpty() {
+        boolean checkEmpty = rbt.contains(10);
         assertFalse(checkEmpty);
     }
 
     @Test
-    void checkNoExist()
-    {
+    void checkNoExist() {
         rbt.insert(10);
-        boolean checkNoExist=rbt.contains(15);
+        boolean checkNoExist = rbt.contains(15);
         assertFalse(checkNoExist);
     }
 
     @Test
-    void deleteExisting()
-    {
+    void deleteExisting() {
         rbt.insert(10);
         rbt.insert(15);
-        boolean deleteCheck=rbt.delete(10);
+        boolean deleteCheck = rbt.delete(10);
         assertTrue(deleteCheck);
-        assertEquals(1,rbt.size());
+        assertEquals(1, rbt.size());
     }
 
     @Test
-    void deleteNonExisting()
-    {
+    void deleteNonExisting() {
         rbt.insert(15);
-        boolean deleteCheck=rbt.delete(10);
+        boolean deleteCheck = rbt.delete(10);
         assertFalse(deleteCheck);
     }
 
     @Test
-    void deleteEmpty()
-    {
-        boolean deleteCheck=rbt.delete(10);
+    void deleteEmpty() {
+        boolean deleteCheck = rbt.delete(10);
         assertFalse(deleteCheck);
     }
 
     @Test
-    void deleteOnlyElement()
-    {
+    void deleteOnlyElement() {
         rbt.insert(10);
         rbt.delete(10);
-        boolean containsCheck=rbt.contains(10);
+        boolean containsCheck = rbt.contains(10);
         assertFalse(containsCheck);
-        assertEquals(0,rbt.size());
+        assertEquals(0, rbt.size());
     }
 
     @Test
-    void deleteWIthTwoChildren()
-    {
+    void deleteWIthTwoChildren() {
         rbt.insert(10);
         rbt.insert(15);
         rbt.insert(5);
         rbt.delete(10);
-        assertEquals(2,rbt.size());
+        assertEquals(2, rbt.size());
 
     }
 
-
     @Test
-    void emptyHeight()
-    {
-        assertEquals(0,rbt.height());
+    void emptyHeight() {
+        assertEquals(0, rbt.height());
     }
 
     @Test
-    void singleElementHeight()
-    {
+    void singleElementHeight() {
         rbt.insert(10);
-        assertEquals(1,rbt.height());
+        assertEquals(1, rbt.height());
     }
 
     @Test
-    void multipleElementHeight()
-    {
+    void multipleElementHeight() {
         rbt.insert(15);
         rbt.insert(5);
         rbt.insert(35);
         rbt.insert(2);
         rbt.insert(0);
-        assertEquals(3,rbt.height());
+        assertEquals(3, rbt.height());
     }
+
     @Test
-    void heightAfterDeletion()
-    {
+    void heightAfterDeletion() {
         rbt.insert(15);
         rbt.insert(5);
         rbt.insert(35);
@@ -154,20 +154,16 @@ public class RBTreeTest {
         rbt.insert(0);
         rbt.delete(0);
         rbt.delete(2);
-        assertEquals(2,rbt.height());
-    }
-
-
-
-    @Test
-    void emptySize()
-    {
-        assertEquals(0,rbt.size());
+        assertEquals(2, rbt.height());
     }
 
     @Test
-    void multipleInsertsSize()
-    {
+    void emptySize() {
+        assertEquals(0, rbt.size());
+    }
+
+    @Test
+    void multipleInsertsSize() {
         rbt.insert(15);
         rbt.insert(5);
         rbt.insert(35);
@@ -178,11 +174,11 @@ public class RBTreeTest {
         rbt.insert(41);
         rbt.insert(12);
         rbt.insert(20);
-        assertEquals(10,rbt.size());
+        assertEquals(10, rbt.size());
     }
+
     @Test
-    void multipleInsertsAndDeletesSize()
-    {
+    void multipleInsertsAndDeletesSize() {
         rbt.insert(15);
         rbt.insert(5);
         rbt.insert(35);
@@ -199,12 +195,11 @@ public class RBTreeTest {
         rbt.delete(41);
         rbt.insert(20);
         rbt.delete(20);
-        assertEquals(4,rbt.size());
+        assertEquals(4, rbt.size());
     }
 
     @Test
-    void insertAndDeleteAll()
-    {
+    void insertAndDeleteAll() {
         rbt.insert(15);
         rbt.insert(5);
         rbt.delete(5);
@@ -217,12 +212,11 @@ public class RBTreeTest {
         rbt.delete(41);
         rbt.insert(20);
         rbt.delete(20);
-        assertEquals(0,rbt.size());
+        assertEquals(0, rbt.size());
     }
 
     @Test
-    void inOrderSorted()
-    {
+    void inOrderSorted() {
         rbt.insert(15);
         rbt.insert(5);
         rbt.insert(35);
@@ -233,19 +227,18 @@ public class RBTreeTest {
         rbt.insert(41);
         rbt.insert(12);
         rbt.insert(20);
-        int[] arr={0,2,5,12,15,17,20,23,35,41};
-        assertArrayEquals(arr,rbt.inOrder());
-    }
-    @Test
-    void inorderEmpty()
-    {
-        int[] arr={};
-        assertArrayEquals(arr,rbt.inOrder());
+        int[] arr = { 0, 2, 5, 12, 15, 17, 20, 23, 35, 41 };
+        assertArrayEquals(arr, rbt.inOrder());
     }
 
     @Test
-    void inOrderSortedAfterDeletion()
-    {
+    void inorderEmpty() {
+        int[] arr = {};
+        assertArrayEquals(arr, rbt.inOrder());
+    }
+
+    @Test
+    void inOrderSortedAfterDeletion() {
         rbt.insert(15);
         rbt.insert(5);
         rbt.insert(35);
@@ -259,13 +252,12 @@ public class RBTreeTest {
         rbt.delete(41);
         rbt.insert(20);
         rbt.delete(20);
-        int[] arr={0,2,5,12,17,23,35};
-        assertArrayEquals(arr,rbt.inOrder());
+        int[] arr = { 0, 2, 5, 12, 17, 23, 35 };
+        assertArrayEquals(arr, rbt.inOrder());
     }
 
     @Test
-    void heightOnSortedInput()
-    {
+    void heightOnSortedInput() {
         rbt.insert(1);
         rbt.insert(2);
         rbt.insert(3);
@@ -276,13 +268,12 @@ public class RBTreeTest {
         rbt.insert(8);
         rbt.insert(9);
         rbt.insert(10);
-        assertEquals(5,rbt.height());
+        assertEquals(5, rbt.height());
     }
 
     @Test
-    void heightComparison()
-    {
-        bst=new BST();
+    void heightComparison() {
+        bst = new BST();
         bst.insert(1);
         bst.insert(2);
         bst.insert(3);
@@ -291,7 +282,7 @@ public class RBTreeTest {
         rbt.insert(2);
         rbt.insert(3);
         rbt.insert(4);
-        assertTrue(rbt.height()<bst.height());
+        assertTrue(rbt.height() < bst.height());
 
     }
 }

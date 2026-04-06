@@ -6,8 +6,32 @@
   <component name="ChangeListManager">
     <list default="true" id="729e6e7a-2de0-4a18-b15b-197c1483da40" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/trees/BST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/BST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/trees/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/trees/Node/BSTNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/Node/BSTNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/trees/Node/RBNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/Node/RBNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/trees/RBTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/RBTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/trees/TreeInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/TreeInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/trees/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/Validator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/trees/benchmark/BenchmarkRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/benchmark/BenchmarkRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/trees/benchmark/InputGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/benchmark/InputGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/trees/benchmark/SortComparison.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/benchmark/SortComparison.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/trees/benchmark/Stats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/benchmark/Stats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/trees/BSTTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/trees/BSTTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/trees/RBTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/trees/RBTreeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/trees/BST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/BST.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/trees/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/trees/Node/BSTNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/Node/BSTNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/trees/Node/RBNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/Node/RBNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/trees/RBTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/RBTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/trees/Validator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/Validator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/trees/benchmark/BenchmarkRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/benchmark/BenchmarkRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/trees/benchmark/InputGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/benchmark/InputGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/trees/benchmark/SortComparison$SortStep.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/benchmark/SortComparison$SortStep.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/trees/benchmark/SortComparison.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/benchmark/SortComparison.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/trees/benchmark/Stats.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/benchmark/Stats.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/trees/BSTTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/trees/BSTTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/trees/RBTreeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/trees/RBTreeTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +76,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "documented",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -113,7 +137,7 @@
       <workItem from="1775409194933" duration="3439000" />
       <workItem from="1775428008930" duration="270000" />
       <workItem from="1775428340091" duration="29330000" />
-      <workItem from="1775484112428" duration="9028000" />
+      <workItem from="1775484112428" duration="10884000" />
     </task>
     <servers />
   </component>
