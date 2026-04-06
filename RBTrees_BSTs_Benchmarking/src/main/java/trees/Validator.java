@@ -7,7 +7,7 @@ import java.util.HashSet;
 
 public class Validator {
 
-    public static final boolean validate=true;
+    public static final boolean validate=false;
 
     public static void checkBST(BST tree)
     {
