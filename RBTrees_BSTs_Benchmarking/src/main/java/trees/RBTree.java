@@ -225,105 +225,122 @@ public class RBTree implements TreeInterface {
     }
 
     private void deleteNode(RBNode z) {
-        RBNode y = z;
-        boolean yOriginalColor = y.isRed;
+        RBNode y=z;
+        boolean yOriginalColor=y.isRed;
         RBNode x;
+        if (z.left==NIL)
+        {
+            x=z.right;
+            transplant(z,z.right);
+        }
+        else if (z.right==NIL)
+        {
+            x=z.left;
+            transplant(z,z.left);
+        }
+        else
+        {
+            y=successor(z);
+            yOriginalColor=y.isRed;
+            x=y.right;
 
-        if (z.left == NIL) {
-            x = z.right;
-            transplant(z, z.right);
-        } else if (z.right == NIL) {
-            x = z.left;
-            transplant(z, z.left);
-        } else {
-            y = successor(z);
-            yOriginalColor = y.isRed;
-            x = y.right;
-
-            if (y.parent == z) {
-                x.parent = y;
-            } else {
-                transplant(y, y.right);
-                y.right = z.right;
-                y.right.parent = y;
+            if (y.parent==z) x.parent=y;
+            else
+            {
+                transplant(y,y.right);
+                y.right=z.right;
+                y.right.parent=y;
             }
 
-            transplant(z, y);
-            y.left = z.left;
-            y.left.parent = y;
-            y.isRed = z.isRed;
+            transplant(z,y);
+            y.left=z.left;
+            y.left.parent=y;
+            y.isRed=z.isRed;
         }
 
-        if (!yOriginalColor) {
-            fixDelete(x);
-        }
+        if (!yOriginalColor) fixDelete(x);
     }
 
     private void fixDelete(RBNode x) {
-        while (x != root && !x.isRed) {
+        while (x!=root && !x.isRed)
+        {
 
-            if (x == x.parent.left) {
-                RBNode w = x.parent.right;
+            //left subtree
+            if (x==x.parent.left)
+            {
+                RBNode w=x.parent.right;
 
-                // Case 1: sibling is RED
-                if (w.isRed) {
-                    w.isRed = false;
-                    x.parent.isRed = true;
+                // Case 1:sibling is red
+                if (w.isRed)
+                {
+                    w.isRed=false;
+                    x.parent.isRed=true;
                     rotateLeft(x.parent);
-                    w = x.parent.right;
+                    w=x.parent.right;
                 }
 
-                // Case 2: both children BLACK
-                if (!w.left.isRed && !w.right.isRed) {
-                    w.isRed = true;
-                    x = x.parent;
-                } else {
-
-                    // Case 3: right child BLACK
-                    if (!w.right.isRed) {
-                        w.left.isRed = false;
-                        w.isRed = true;
+                // Case 2:both children black
+                if (!w.left.isRed && !w.right.isRed)
+                {
+                    w.isRed=true;
+                    x=x.parent;
+                }
+                else
+                {
+                    // Case 3:right child black
+                    if (!w.right.isRed)
+                    {
+                        w.left.isRed=false;
+                        w.isRed=true;
                         rotateRight(w);
-                        w = x.parent.right;
+                        w=x.parent.right;
                     }
 
-                    // Case 4: right child RED
-                    w.isRed = x.parent.isRed;
-                    x.parent.isRed = false;
-                    w.right.isRed = false;
+                    // Case 4:right child red
+                    w.isRed=x.parent.isRed;
+                    x.parent.isRed=false;
+                    w.right.isRed=false;
                     rotateLeft(x.parent);
-                    x = root;
+                    x=root;
                 }
 
-            } else {
-                // 🔁 MIRROR CASES
+            }
+            else
+            {
+                RBNode w=x.parent.left;
 
-                RBNode w = x.parent.left;
-
-                if (w.isRed) {
-                    w.isRed = false;
-                    x.parent.isRed = true;
+                // Case 1:sibling is red
+                if (w.isRed)
+                {
+                    w.isRed=false;
+                    x.parent.isRed=true;
                     rotateRight(x.parent);
-                    w = x.parent.left;
+                    w=x.parent.left;
                 }
 
-                if (!w.right.isRed && !w.left.isRed) {
-                    w.isRed = true;
-                    x = x.parent;
-                } else {
-
-                    if (!w.left.isRed) {
-                        w.right.isRed = false;
-                        w.isRed = true;
+                // Case 2:both children black
+                if (!w.right.isRed && !w.left.isRed)
+                {
+                    w.isRed=true;
+                    x=x.parent;
+                }
+                else
+                {
+                    // Case 3:left child black
+                    if (!w.left.isRed)
+                    {
+                        w.right.isRed=false;
+                        w.isRed=true;
                         rotateLeft(w);
-                        w = x.parent.left;
+                        w=x.parent.left;
                     }
 
-                    w.isRed = x.parent.isRed;
-                    x.parent.isRed = false;
-                    w.left.isRed = false;
+                    // Case 4:left child red
+                    w.isRed=x.parent.isRed;
+                    x.parent.isRed=false;
+                    w.left.isRed=false;
                     rotateRight(x.parent);
-                    x = root;
+                    x=root;
                 }
             }
         }
