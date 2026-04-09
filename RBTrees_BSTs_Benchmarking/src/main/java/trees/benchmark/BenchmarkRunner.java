@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.function.Supplier;
 
 /**
@@ -23,7 +24,7 @@ import java.util.function.Supplier;
  * working directory.
  * </p>
  * <p>
- * Each benchmark is repeated {@value #RUNS} times to obtain stable statistics.
+ * Each benchmark is repeated {@value #DEFAULT_RUNS} times to obtain stable statistics.
  * The {@link Stats} class is then used to compute mean, median, and standard
  * deviation
  * over those runs. Both tree types are supplied via
@@ -34,7 +35,9 @@ import java.util.function.Supplier;
 public class BenchmarkRunner {
 
     /** Number of times each benchmark is repeated for statistical reliability. */
-    private static final int RUNS = 6;
+    private static int RUNS ;
+    private static final int DEFAULT_RUNS=6;
+    private static final int DEFAULT_SIZE=100000;
 
     /**
      * Entry point. Generates the four input distributions, writes the CSV header,
@@ -44,13 +47,32 @@ public class BenchmarkRunner {
      * @throws IOException if writing to {@code results.csv} fails
      */
     public static void main(String[] args) throws IOException {
-        InputGenerator generator = new InputGenerator();
+        Scanner scanner=new Scanner(System.in);
+        System.out.print("What is the size of input do you want to benchmark (Enter 0 for default size): ");
+        int size=scanner.nextInt();
+        while (size<0)
+        {
+            System.out.println("size of input must be at least one");
+            System.out.print("What is the size of input do you want to benchmark: ");
+            size=scanner.nextInt();
+        }
+        size= (size==0) ? DEFAULT_SIZE : size;
+        InputGenerator.setN(size);
 
-        // Generate four input distributions (N = 100,000 each, deterministic seed)
-        int[] random = generator.generateRandom();
-        int[] nearlySorted1 = generator.generateNearlySorted(1);
-        int[] nearlySorted5 = generator.generateNearlySorted(5);
-        int[] nearlySorted10 = generator.generateNearlySorted(10);
+        System.out.print("How many runs do you want for the benchmark (Enter 0 for default runs): ");
+        RUNS=scanner.nextInt();
+        while(RUNS<0)
+        {
+            System.out.println("the benchmark need at least one run");
+            System.out.print("How many runs do you want for the benchmark: ");
+            RUNS=scanner.nextInt();
+        }
+        RUNS= (RUNS==0) ? DEFAULT_RUNS : RUNS+1;
+
+        int[] random= InputGenerator.generateRandom();
+        int[] nearlySorted1= InputGenerator.generateNearlySorted(1);
+        int[] nearlySorted5= InputGenerator.generateNearlySorted(5);
+        int[] nearlySorted10= InputGenerator.generateNearlySorted(10);
 
         // Write the CSV header (overwrite mode clears any previous results)
         FileWriter fw = new FileWriter("results.csv", false); // false = overwrite
@@ -74,7 +96,7 @@ public class BenchmarkRunner {
      *
      * @param treeSupplier factory that creates a fresh empty tree each run
      * @param input        the array of integers to insert
-     * @return array of {@value #RUNS} nanosecond timing measurements
+     * @return array of {@value #DEFAULT_RUNS} nanosecond timing measurements
      */
     private static long[] benchmarkInsert(Supplier<TreeInterface> treeSupplier, int[] input,String distribution,String structure) throws IOException {
         long[] elapsedArray = new long[RUNS-1];
@@ -113,7 +135,7 @@ public class BenchmarkRunner {
      * @param treeSupplier factory that creates a fresh empty tree (used once to
      *                     pre-fill)
      * @param input        the array of integers used to populate the tree
-     * @return array of {@value #RUNS} nanosecond timing measurements
+     * @return array of {@value #DEFAULT_RUNS} nanosecond timing measurements
      */
     private static long[] benchmarkContains(Supplier<TreeInterface> treeSupplier, int[] input) {
         int n = input.length;
@@ -153,7 +175,7 @@ public class BenchmarkRunner {
      *
      * @param treeSupplier factory that creates a fresh empty tree each run
      * @param input        the array of integers to insert and partially delete
-     * @return array of {@value #RUNS} nanosecond timing measurements
+     * @return array of {@value #DEFAULT_RUNS} nanosecond timing measurements
      */
     private static long[] benchmarkDelete(Supplier<TreeInterface> treeSupplier, int[] input) {
         int n = input.length;
@@ -187,7 +209,7 @@ public class BenchmarkRunner {
      *
      * @param treeSupplier factory that creates a fresh empty tree each run
      * @param input        the array of integers to sort via the tree
-     * @return array of {@value #RUNS} nanosecond timing measurements
+     * @return array of {@value #DEFAULT_RUNS} nanosecond timing measurements
      */
     private static long[] benchmarkSort(Supplier<TreeInterface> treeSupplier, int[] input) {
         long[] elapsedArray = new long[RUNS];
@@ -213,7 +235,7 @@ public class BenchmarkRunner {
      * does not affect the next run's timing.
      *
      * @param input the array to sort
-     * @return array of {@value #RUNS} nanosecond timing measurements
+     * @return array of {@value #DEFAULT_RUNS} nanosecond timing measurements
      */
     private static long[] benchmarkMergeSort(int[] input) {
         SortComparison mergeSort = new SortComparison();

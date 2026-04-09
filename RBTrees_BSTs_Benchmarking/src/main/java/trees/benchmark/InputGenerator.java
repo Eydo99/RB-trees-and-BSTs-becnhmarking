@@ -2,7 +2,6 @@ package trees.benchmark;
 
 import java.util.Random;
 
-import static java.util.Collections.swap;
 
 /**
  * Generates deterministic input arrays for the benchmarking suite.
@@ -18,19 +17,21 @@ import static java.util.Collections.swap;
  */
 public class InputGenerator {
 
+
+
     /** Number of elements in every generated array. */
-    private static final int n = 100000;
+    private static  int n;
 
     /** Fixed random seed for reproducibility across runs. */
     private static final int seed = 40;
 
     /**
-     * Generates an array of {@value #n} random integers uniformly distributed
+     * Generates an array of {@value } random integers uniformly distributed
      * in the range {@code [0, 10*N]}, using the fixed {@link #seed}.
      *
-     * @return a new {@code int[]} of length {@value #n} with random values
+     * @return a new {@code int[]} of length {@value } with random values
      */
-    public int[] generateRandom() {
+    public static int[] generateRandom() {
         int[] randomArray = new int[n];
         Random random = new Random(seed);
         for (int i = 0; i < n; i++) {
@@ -40,7 +41,7 @@ public class InputGenerator {
     }
 
     /**
-     * Generates a nearly-sorted array of {@value #n} elements.
+     * Generates a nearly-sorted array of {@value } elements.
      * <p>
      * Starts with the perfectly sorted array {@code [0, 1, 2, ..., N-1]}, then
      * randomly swaps {@code (swapPercent / 100.0) * N} pairs of elements to
@@ -50,9 +51,9 @@ public class InputGenerator {
      *
      * @param swapPercent the percentage of elements to displace via random swaps
      *                    (e.g., 1 means 1% of N swaps, 10 means 10% of N swaps)
-     * @return a new {@code int[]} of length {@value #n} that is nearly sorted
+     * @return a new {@code int[]} of length {@value } that is nearly sorted
      */
-    public int[] generateNearlySorted(int swapPercent) {
+    public static int[] generateNearlySorted(int swapPercent) {
         int[] nearlySortedArr = new int[n];
         Random random = new Random(seed);
         // Start with the perfectly sorted sequence [0, 1, 2, ..., N-1]
@@ -78,10 +79,14 @@ public class InputGenerator {
      * @param i   index of the first element
      * @param j   index of the second element
      */
-    private void swap(int[] arr, int i, int j) {
+    private static void swap(int[] arr, int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
+    }
+
+    public static void setN(int n) {
+        InputGenerator.n = n;
     }
 
 }
