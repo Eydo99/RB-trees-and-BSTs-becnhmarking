@@ -9,18 +9,42 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.function.Supplier;
 
 public class BenchmarkRunner {
-    private static final int RUNS=6;
+    private static  int RUNS;
+    private static final int DEFAULT_RUNS=6;
+    private static final int DEFAULT_SIZE=100000;
 
     public static void main(String[] args) throws IOException {
-        InputGenerator generator=new InputGenerator();
+        Scanner scanner=new Scanner(System.in);
+        System.out.print("What is the size of input do you want to benchmark (Enter 0 for default size): ");
+        int size=scanner.nextInt();
+        while (size<0)
+        {
+            System.out.println("size of input must be at least one");
+            System.out.print("What is the size of input do you want to benchmark: ");
+            size=scanner.nextInt();
+        }
+        size= (size==0) ? DEFAULT_SIZE : size;
+        InputGenerator.setN(size);
 
-        int[] random=generator.generateRandom();
-        int[] nearlySorted1=generator.generateNearlySorted(1);
-        int[] nearlySorted5=generator.generateNearlySorted(5);
-        int[] nearlySorted10=generator.generateNearlySorted(10);
+        System.out.print("How many runs do you want for the benchmark (Enter 0 for default runs): ");
+        RUNS=scanner.nextInt();
+        while(RUNS<0)
+        {
+            System.out.println("the benchmark need at least one run");
+            System.out.print("How many runs do you want for the benchmark: ");
+            RUNS=scanner.nextInt();
+        }
+        RUNS= (RUNS==0) ? DEFAULT_RUNS : RUNS+1;
+
+        int[] random= InputGenerator.generateRandom();
+        int[] nearlySorted1= InputGenerator.generateNearlySorted(1);
+        int[] nearlySorted5= InputGenerator.generateNearlySorted(5);
+        int[] nearlySorted10= InputGenerator.generateNearlySorted(10);
+
 
         FileWriter fw = new FileWriter("results.csv", false); // false = overwrite
         PrintWriter pw = new PrintWriter(fw);
@@ -36,7 +60,6 @@ public class BenchmarkRunner {
 
     private static long[] benchmarkInsert(Supplier<TreeInterface> treeSupplier,int[] input,String distribution,String structure) throws IOException {
         long[] elapsedArray=new long[RUNS-1];
-
         for(int i=0;i<RUNS;i++)
         {
             TreeInterface tree = treeSupplier.get();
@@ -77,12 +100,12 @@ public class BenchmarkRunner {
         {
             Random random=new Random(40);
             long start=System.nanoTime();
-            for(int j=0;j<50000;j++)
+            for(int j=0;j<n/2;j++)
             {
                 int lookup=random.nextInt(n);
                 tree.contains(input[lookup]);
             }
-            for(int j=0;j<50000;j++)
+            for(int j=0;j<n/2;j++)
             {
                 int lookup=random.nextInt(10*n,30*n);
                 tree.contains(lookup);
@@ -202,7 +225,6 @@ public class BenchmarkRunner {
         printResults("Sort", mergeSort);
         writeToCSV(distribution, "MergeSort", "Sort", mergeSort);
 
-
         System.out.printf("%nSpeedup (BST/RBTree):%n");
         System.out.printf("Insert speedup: %.2fx%n", Stats.mean(bstInsert) / Stats.mean(RBInsert));
         System.out.printf("Contains speedup: %.2fx%n", Stats.mean(bstContains) / Stats.mean(RBContains));
@@ -213,11 +235,8 @@ public class BenchmarkRunner {
     private static void writeToCSV(String distribution, String structure, String operation, long[] times) throws IOException {
         FileWriter fw = new FileWriter("results.csv", true); // true = append mode
         PrintWriter pw = new PrintWriter(fw);
-        pw.printf("%s,%s,%s,%.2f,%.2f,%.2f%n",
-                distribution, structure, operation,
-                Stats.mean(times)/1_000_000,
-                Stats.median(times)/1_000_000,
-                Stats.standardDeviation(times)/1_000_000);
+        pw.printf("%s,%s,%s,%.2f,%.2f,%.2f%n", distribution, structure, operation, Stats.mean(times)/1_000_000,
+                Stats.median(times)/1_000_000, Stats.standardDeviation(times)/1_000_000);
         pw.close();
     }
 }

@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="729e6e7a-2de0-4a18-b15b-197c1483da40" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/trees/benchmark/BenchmarkRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/benchmark/BenchmarkRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/trees/benchmark/InputGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/trees/benchmark/InputGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/trees/RBTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/RBTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/trees/benchmark/BenchmarkRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/benchmark/BenchmarkRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/trees/benchmark/InputGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/trees/benchmark/InputGenerator.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +48,7 @@
   &quot;keyToString&quot;: {
     &quot;Application.BenchmarkRunner.executor&quot;: &quot;Run&quot;,
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JAR Application.RBTrees_BSTs_Benchmarking-1.0-SNAPSHOT.jar.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.BSTTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.RBTreeTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.trees in RBTrees_BSTs_Benchmarking.executor&quot;: &quot;Run&quot;,
@@ -94,9 +103,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RBTrees_BSTs_Benchmarking-1.0-SNAPSHOT.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/target/RBTrees_BSTs_Benchmarking-1.0-SNAPSHOT.jar" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.BenchmarkRunner" />
+        <item itemvalue="JAR Application.RBTrees_BSTs_Benchmarking-1.0-SNAPSHOT.jar" />
         <item itemvalue="JUnit.trees in RBTrees_BSTs_Benchmarking" />
       </list>
     </recent_temporary>
@@ -112,6 +126,9 @@
       <workItem from="1775428008930" duration="270000" />
       <workItem from="1775428340091" duration="29330000" />
       <workItem from="1775484112428" duration="9028000" />
+      <workItem from="1775627074275" duration="630000" />
+      <workItem from="1775748976502" duration="236000" />
+      <workItem from="1775754183722" duration="1475000" />
     </task>
     <servers />
   </component>

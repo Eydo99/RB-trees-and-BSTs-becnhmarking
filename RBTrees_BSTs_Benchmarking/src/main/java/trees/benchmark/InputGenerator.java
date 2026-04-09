@@ -4,10 +4,14 @@ import java.util.Random;
 
 public class InputGenerator {
 
-    private static final int n=100000;
+    private static  int n;
     private static final int seed = 40;
 
-    public int[] generateRandom()
+    public static   void setN(int n) {
+        InputGenerator.n = n;
+    }
+
+    public static int[] generateRandom()
     {
         int[] randomArray=new int[n];
         Random random=new Random(seed);
@@ -19,7 +23,7 @@ public class InputGenerator {
     }
 
 
-    public int[] generateNearlySorted(int swapPercent)
+    public static int[] generateNearlySorted(int swapPercent)
     {
         int[] nearlySortedArr=new int[n];
         Random random=new Random(seed);
@@ -38,7 +42,7 @@ public class InputGenerator {
         return  nearlySortedArr;
     }
 
-    private void swap(int[] arr,int i,int j)
+    private static void swap(int[] arr,int i,int j)
     {
         int temp=arr[i];
         arr[i]=arr[j];
